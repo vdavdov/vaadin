@@ -1,0 +1,13 @@
+vaadin:
+  launch-browser=true
+
+spring:
+  application:
+    name: vaadin
+  data:
+    mongodb:
+      database: mongo
+      host: 127017
+      username: mongo
+      password: mongo
+      uri:
