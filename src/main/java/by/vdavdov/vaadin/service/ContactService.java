@@ -2,17 +2,21 @@ package by.vdavdov.vaadin.service;
 
 import by.vdavdov.vaadin.model.Contact;
 import by.vdavdov.vaadin.repositories.ContactRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
 @Service
-@RequiredArgsConstructor
 public class ContactService {
     private final ContactRepository contactRepository;
 
+    @Autowired
+    public ContactService(final ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
+    }
+
     public Collection<Contact> getAllContacts() {
-        return contactRepository.finaAll();
+        return contactRepository.findAll();
     }
 }

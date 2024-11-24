@@ -48,3 +48,13 @@ dependencyManagement {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+vaadin {
+    productionMode = true
+}
+
+tasks.withType<Jar> {
+    from("src/main/frontend") {
+        into("META-INF/frontend")
+    }
+}

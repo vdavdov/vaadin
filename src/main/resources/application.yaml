@@ -1,13 +1,16 @@
 vaadin:
-  launch-browser=true
+  url-mapping: /*
 
 spring:
   application:
     name: vaadin
   data:
     mongodb:
-      database: mongo
-      host: 127017
-      username: mongo
-      password: mongo
-      uri:
+      uri: "mongodb://admin:pass@mongo:27017/contact"
+      auto-index-creation: true
+  profiles:
+    active: "prod"
+
+  servlet:
+    multipart:
+      enabled: false
