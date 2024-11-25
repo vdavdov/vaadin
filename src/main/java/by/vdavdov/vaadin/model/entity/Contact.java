@@ -1,23 +1,18 @@
-package by.vdavdov.vaadin.model;
+package by.vdavdov.vaadin.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import nonapi.io.github.classgraph.json.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "contacts")
-@AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class Contact {
     @Id
     private String id;
     private String name;
-    @Indexed(unique = true)
+//    @Indexed(unique = true)
     private String email;
-    @Indexed(unique = true)
+//    @Indexed(unique = true)
     private String phone;
 
     @Override
